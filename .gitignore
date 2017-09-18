@@ -1,0 +1,5 @@
+bin/
+.import/
+*.import
+export_presets.cfg
+exclude/
