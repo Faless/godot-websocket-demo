@@ -3,3 +3,4 @@ bin/
 *.import
 export_presets.cfg
 exclude/
+*.pyc
