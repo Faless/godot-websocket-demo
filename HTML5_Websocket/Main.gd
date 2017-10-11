@@ -19,11 +19,11 @@ func _process(delta):
 			_log("Connected!")
 			peer.set_stream_peer(tcp)
 			_conn = true
-			peer.put_packet("First UTF-8 message: Það fer nú að verða verra ferðaveðrið".to_utf8())
+			peer.put_packet(bytes2var("First UTF-8 message: Það fer nú að verða verra ferðaveðrið"))
 		if peer.get_available_packet_count() > 0:
 			var pkt = peer.get_packet()
 			_output("Got packet: " + str(Array(pkt)))
-			_output("Packet text: " + str(pkt.get_string_from_utf8()))
+			_output("Packet text: " + str(bytes2var(pkt)))
 		return
 	elif _conn:
 		_conn = false
@@ -43,5 +43,5 @@ func _on_Button_pressed():
 		_log("Cannot send, not connected")
 	else:
 		_log("Sending: " + get_node("Control/Panel/VLayout/HLayout/LineEdit").text)
-		peer.put_packet(get_node("Control/Panel/VLayout/HLayout/LineEdit").text.to_utf8())
+		peer.put_packet(var2bytes(get_node("Control/Panel/VLayout/HLayout/LineEdit").text))
 	get_node("Control/Panel/VLayout/HLayout/LineEdit").clear()
