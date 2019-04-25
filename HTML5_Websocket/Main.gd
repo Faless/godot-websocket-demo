@@ -19,7 +19,7 @@ func _process(delta):
 			_log("Connected!")
 			peer.set_stream_peer(tcp)
 			_conn = true
-			peer.put_packet(bytes2var("First UTF-8 message: Það fer nú að verða verra ferðaveðrið"))
+			peer.put_packet(bytes2var(("First UTF-8 message: Það fer nú að verða verra ferðaveðrið").to_utf8()))
 		if peer.get_available_packet_count() > 0:
 			var pkt = peer.get_packet()
 			_output("Got packet: " + str(Array(pkt)))
