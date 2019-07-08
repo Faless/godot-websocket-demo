@@ -1,5 +1,7 @@
 # Godot 3.0 HTML5 WebSocket example
 
+# This demo was for Godot 3.0 and used emscripten automatic conversion of TCP sockets to websockets. This demo is deprecated, as there is now official WebSocket support via WebSocketClient and WebSocketServer (godot 3.1+)
+
 This is a small demo to show usage of WebSocket feature in HTML5 Godot export:
 
  * The WebSocket Server used is a fork of https://github.com/dpallot/simple-websocket-server (see https://github.com/Faless/simple-websocket-server) allowing binary sub-protocol
